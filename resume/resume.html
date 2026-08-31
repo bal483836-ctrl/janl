@@ -4,287 +4,139 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;700&family=Noto+Sans+SC:wght@300;400;500;700&family=IBM+Plex+Mono:wght@500;600&display=swap">
 <style>
   :root{
-    --paper:#FDFDFB;
-    --card:#FFFFFF;
-    --ink:#18211E;
-    --ink-2:#3C4A45;
-    --muted:#6B7A75;
-    --rule:#DCE3E0;
-    --rule-soft:#EBEFED;
-    --accent:#1F6F63;
-    --accent-soft:#E4EEEB;
-    --accent-ink:#155248;
+    --paper:#FDFDFB; --card:#FFFFFF;
+    --ink:#18211E; --ink-2:#3C4A45; --muted:#6B7A75;
+    --rule:#DCE3E0; --rule-soft:#EBEFED;
+    --accent:#1F6F63; --accent-soft:#E4EEEB; --accent-ink:#155248;
     --serif:"Noto Serif SC",Songti SC,SimSun,Georgia,serif;
     --sans:"Noto Sans SC",-apple-system,"PingFang SC","Microsoft YaHei",Helvetica,Arial,sans-serif;
     --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
-    --measure:74ch;
   }
   @media (prefers-color-scheme:dark){
     :root:not([data-theme="light"]){
-      --paper:#111614;
-      --card:#171E1B;
-      --ink:#E7EDEA;
-      --ink-2:#BCC8C3;
-      --muted:#8B9A94;
-      --rule:#2A3532;
-      --rule-soft:#212A27;
-      --accent:#6FC3B2;
-      --accent-soft:#1B2E2A;
-      --accent-ink:#8FD6C6;
+      --paper:#111614; --card:#171E1B;
+      --ink:#E7EDEA; --ink-2:#BCC8C3; --muted:#8B9A94;
+      --rule:#2A3532; --rule-soft:#212A27;
+      --accent:#6FC3B2; --accent-soft:#1B2E2A; --accent-ink:#8FD6C6;
     }
   }
   :root[data-theme="dark"]{
-    --paper:#111614;
-    --card:#171E1B;
-    --ink:#E7EDEA;
-    --ink-2:#BCC8C3;
-    --muted:#8B9A94;
-    --rule:#2A3532;
-    --rule-soft:#212A27;
-    --accent:#6FC3B2;
-    --accent-soft:#1B2E2A;
-    --accent-ink:#8FD6C6;
+    --paper:#111614; --card:#171E1B;
+    --ink:#E7EDEA; --ink-2:#BCC8C3; --muted:#8B9A94;
+    --rule:#2A3532; --rule-soft:#212A27;
+    --accent:#6FC3B2; --accent-soft:#1B2E2A; --accent-ink:#8FD6C6;
   }
 
   *{box-sizing:border-box}
   body{
-    margin:0;
-    background:var(--paper);
-    color:var(--ink);
-    font-family:var(--sans);
-    font-weight:400;
-    font-size:14px;
-    line-height:1.72;
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:var(--sans); font-size:13.5px; line-height:1.68;
     -webkit-font-smoothing:antialiased;
   }
-  .sheet{
-    max-width:920px;
-    margin:0 auto;
-    padding:56px 44px 72px;
-    background:var(--card);
-  }
+  .sheet{max-width:900px;margin:0 auto;padding:48px 42px 64px;background:var(--card)}
 
-  /* ---------- header ---------- */
   .masthead{
-    display:flex;
-    flex-wrap:wrap;
-    align-items:flex-end;
-    justify-content:space-between;
-    gap:20px 32px;
-    padding-bottom:18px;
-    border-bottom:2px solid var(--ink);
+    display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;
+    gap:16px 32px;padding-bottom:14px;border-bottom:2px solid var(--ink);
   }
-  .name{
-    font-family:var(--serif);
-    font-weight:700;
-    font-size:40px;
-    line-height:1.1;
-    letter-spacing:.06em;
-    margin:0;
-    text-wrap:balance;
-  }
-  .target{
-    margin:10px 0 0;
-    font-size:14.5px;
-    font-weight:500;
-    color:var(--accent);
-    letter-spacing:.02em;
-  }
-  .contact{
-    display:grid;
-    gap:3px;
-    font-size:12.5px;
-    color:var(--ink-2);
-    text-align:right;
-  }
-  .contact .mono{font-family:var(--mono);font-size:12px;letter-spacing:.01em}
+  .name{font-family:var(--serif);font-weight:700;font-size:36px;line-height:1.1;letter-spacing:.06em;margin:0}
+  .target{margin:8px 0 0;font-size:14px;font-weight:500;color:var(--accent);letter-spacing:.02em}
+  .contact{display:grid;gap:2px;font-size:12.5px;color:var(--ink-2);text-align:right}
+  .contact .mono{font-family:var(--mono);font-size:12px}
   .contact a{color:inherit;text-decoration:none;border-bottom:1px solid var(--rule)}
   .contact a:hover,.contact a:focus-visible{color:var(--accent);border-color:var(--accent)}
-  .facts{
-    margin-top:12px;
-    font-size:12.5px;
-    color:var(--muted);
-    letter-spacing:.04em;
-  }
+  .facts{margin:10px 0 0;font-size:12.5px;color:var(--muted);letter-spacing:.04em}
 
-  /* ---------- sections ---------- */
-  .sec{margin-top:34px}
-  .sec-head{
-    display:flex;
-    align-items:baseline;
-    gap:14px;
-    margin-bottom:16px;
-  }
-  .sec-head h2{
-    font-family:var(--serif);
-    font-size:15px;
-    font-weight:700;
-    letter-spacing:.28em;
-    margin:0;
-    white-space:nowrap;
-    color:var(--ink);
-  }
+  .sec{margin-top:26px}
+  .sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:13px}
+  .sec-head h2{font-family:var(--serif);font-size:14.5px;font-weight:700;letter-spacing:.28em;margin:0;white-space:nowrap}
   .sec-head .line{flex:1;height:1px;background:var(--rule)}
-  .sec-head .tag{
-    font-family:var(--mono);
-    font-size:10.5px;
-    letter-spacing:.16em;
-    color:var(--muted);
-    text-transform:uppercase;
-  }
+  .sec-head .tag{font-family:var(--mono);font-size:10px;letter-spacing:.16em;color:var(--muted);text-transform:uppercase}
 
-  /* ---------- timeline grid ---------- */
-  .entry{
-    display:grid;
-    grid-template-columns:118px 1fr;
-    gap:0 24px;
-    padding-bottom:22px;
-  }
-  .entry + .entry{border-top:1px solid var(--rule-soft);padding-top:20px}
+  .entry{display:grid;grid-template-columns:88px 1fr;gap:0 16px;padding-bottom:16px}
+  .entry + .entry{border-top:1px solid var(--rule-soft);padding-top:15px}
   .when{
-    font-family:var(--mono);
-    font-size:11.5px;
-    font-weight:500;
-    color:var(--muted);
-    letter-spacing:.02em;
-    padding-top:4px;
-    font-variant-numeric:tabular-nums;
+    font-family:var(--mono);font-size:11px;font-weight:500;color:var(--muted);
+    padding-top:3px;font-variant-numeric:tabular-nums;
   }
   .when b{display:block;color:var(--accent);font-weight:600}
   .entry-body{min-width:0}
-  .role{
-    display:flex;
-    flex-wrap:wrap;
-    align-items:baseline;
-    gap:6px 12px;
-    margin:0 0 2px;
-  }
-  .role h3{
-    font-family:var(--serif);
-    font-size:17px;
-    font-weight:700;
-    margin:0;
-    letter-spacing:.02em;
-  }
-  .role .sep{color:var(--rule);font-weight:300}
-  .role .what{font-size:14px;font-weight:500;color:var(--accent)}
-  .role .meta{font-size:12.5px;color:var(--muted)}
-  .lede{
-    margin:6px 0 12px;
-    color:var(--ink-2);
-    font-size:13.5px;
-    max-width:var(--measure);
-  }
+  .role{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 11px;margin:0 0 3px}
+  .role h3{font-family:var(--serif);font-size:16px;font-weight:700;margin:0;letter-spacing:.02em}
+  .role .sep{color:var(--muted);opacity:.55;font-weight:300}
+  .role .what{font-size:13.5px;font-weight:500;color:var(--accent)}
+  .role .meta{font-size:12px;color:var(--muted)}
+  .lede{margin:5px 0 9px;color:var(--ink-2);font-size:13px}
 
-  /* ---------- stages ---------- */
-  .stage{margin:16px 0 0}
-  .stage-label{
-    display:flex;
-    align-items:center;
-    gap:10px;
-    margin-bottom:7px;
-  }
+  .stage{margin:12px 0 0}
+  .stage-label{display:flex;align-items:center;gap:9px;margin-bottom:6px}
   .stage-num{
-    font-family:var(--mono);
-    font-size:10.5px;
-    font-weight:600;
-    letter-spacing:.1em;
-    color:var(--accent-ink);
-    background:var(--accent-soft);
-    padding:2px 7px;
-    border-radius:2px;
-    white-space:nowrap;
+    font-family:var(--mono);font-size:10px;font-weight:600;letter-spacing:.1em;
+    color:var(--accent-ink);background:var(--accent-soft);padding:2px 7px;border-radius:2px;white-space:nowrap;
   }
-  .stage-label span.t{
-    font-weight:700;
-    font-size:13.5px;
-    letter-spacing:.02em;
-  }
-  ul{margin:0;padding-left:0;list-style:none;display:grid;gap:7px}
-  li{
-    position:relative;
-    padding-left:15px;
-    max-width:var(--measure);
-    color:var(--ink-2);
-  }
-  li::before{
-    content:"";
-    position:absolute;
-    left:2px;top:.72em;
-    width:4px;height:4px;
-    background:var(--accent);
-    opacity:.65;
-  }
+  .stage-label span.t{font-weight:700;font-size:13px;letter-spacing:.02em}
+
+  ul{margin:0;padding-left:0;list-style:none;display:grid;gap:6px}
+  li{position:relative;padding-left:14px;color:var(--ink-2)}
+  li::before{content:"";position:absolute;left:2px;top:.72em;width:4px;height:4px;background:var(--accent);opacity:.65}
   li strong{color:var(--ink);font-weight:700}
-  .m{
-    font-family:var(--mono);
-    font-weight:600;
-    font-size:.94em;
-    font-variant-numeric:tabular-nums;
-    color:var(--ink);
-    letter-spacing:-.01em;
-  }
-  code{
-    font-family:var(--mono);
-    font-size:.88em;
-    background:var(--rule-soft);
-    padding:1px 4px;
-    border-radius:2px;
-    color:var(--ink);
-  }
-  .stack{
-    margin-top:14px;
-    padding-top:10px;
-    border-top:1px dashed var(--rule);
-    font-size:12.5px;
-    color:var(--muted);
-  }
+  .m{font-family:var(--mono);font-weight:600;font-size:.94em;font-variant-numeric:tabular-nums;color:var(--ink)}
+  code{font-family:var(--mono);font-size:.88em;background:var(--rule-soft);padding:1px 4px;border-radius:2px;color:var(--ink)}
+  .stack{margin:11px 0 0;padding-top:9px;border-top:1px dashed var(--rule);font-size:12.5px;color:var(--muted)}
   .stack b{color:var(--ink-2);font-weight:500;letter-spacing:.08em}
 
-  /* ---------- skills ---------- */
-  .skills{display:grid;gap:9px}
-  .skill{
-    display:grid;
-    grid-template-columns:118px 1fr;
-    gap:24px;
-    align-items:baseline;
-    padding-bottom:9px;
-    border-bottom:1px solid var(--rule-soft);
-  }
+  .skills{display:grid;gap:7px;margin:0}
+  .skill{display:grid;grid-template-columns:88px 1fr;gap:16px;align-items:baseline;padding-bottom:7px;border-bottom:1px solid var(--rule-soft)}
   .skill:last-child{border-bottom:0}
-  .skill dt{
-    font-weight:700;
-    font-size:13px;
-    letter-spacing:.06em;
-    color:var(--ink);
-  }
-  .skill dd{margin:0;color:var(--ink-2);font-size:13.5px}
+  .skill dt{font-weight:700;font-size:12.5px;letter-spacing:.06em;color:var(--ink)}
+  .skill dd{margin:0;color:var(--ink-2);font-size:13px}
 
-  /* ---------- footer strip ---------- */
-  .edu{display:grid;gap:14px}
-  .honors li{max-width:none}
+  .summary{margin:0;color:var(--ink-2);font-size:13px}
+  .edu-line{margin:0 0 9px;font-size:13px;color:var(--ink-2)}
+  .edu-line b{font-family:var(--serif);font-size:15px;color:var(--ink)}
+  .edu-line .yr{font-family:var(--mono);font-size:11.5px;color:var(--accent);font-variant-numeric:tabular-nums}
 
   @media (max-width:720px){
-    .sheet{padding:36px 20px 52px}
-    .name{font-size:32px}
+    .sheet{padding:32px 18px 48px}
+    .name{font-size:30px}
     .contact{text-align:left}
-    .entry,.skill{grid-template-columns:1fr;gap:6px}
+    .entry,.skill{grid-template-columns:1fr;gap:5px}
     .when{padding-top:0}
     .when b{display:inline;margin-right:8px}
   }
 
   @media print{
-    @page{size:A4;margin:13mm 12mm}
-    :root{--paper:#fff;--card:#fff;--ink:#111;--ink-2:#333;--muted:#666;--rule:#bbb;--rule-soft:#ddd;--accent:#14574D;--accent-soft:#EAF1EF;--accent-ink:#14574D}
-    body{font-size:10.2px;line-height:1.6}
+    @page{size:A4;margin:11mm 11mm}
+    :root{--paper:#fff;--card:#fff;--ink:#111;--ink-2:#2e2e2e;--muted:#666;--rule:#bbb;--rule-soft:#ddd;--accent:#14574D;--accent-soft:#EAF1EF;--accent-ink:#14574D}
+    body{font-size:10.4px;line-height:1.52}
     .sheet{max-width:none;padding:0}
-    .name{font-size:28px}
-    .sec{margin-top:18px;break-inside:auto}
-    .entry{break-inside:avoid;padding-bottom:12px}
-    .entry + .entry{padding-top:11px}
-    .stage{break-inside:avoid}
-    ul{gap:4px}
-    .role h3{font-size:13.5px}
+    .name{font-size:24px}
+    .target{font-size:10.8px;margin-top:5px}
+    .facts{font-size:9.8px;margin-top:6px}
+    .contact{font-size:9.8px}.contact .mono{font-size:9.8px}
+    .sec{margin-top:12px}
+    .sec-head{margin-bottom:8px}
+    .sec-head h2{font-size:11.2px}
+    .entry{padding-bottom:8px;grid-template-columns:74px 1fr;gap:0 12px}
+    .skill{grid-template-columns:74px 1fr;gap:12px}
+    .sec-head{break-after:avoid}
+    .role{break-after:avoid}
+    .entry + .entry{padding-top:8px}
+    .role h3{font-size:12.4px}.role .what{font-size:10.2px}
+    .lede{margin:3px 0 6px;font-size:9.6px}
+    .stage{margin-top:8px}
+    li{break-inside:avoid}
+    .stage-label{break-after:avoid}
+    .stage-label{margin-bottom:4px}
+    .stage-label span.t{font-size:10.2px}
+    ul{gap:3.5px}
+    li{padding-left:11px}
+    .stack{margin-top:6px;padding-top:5px;font-size:9px}
+    .skill{padding-bottom:5px}
+    .skills{gap:5px}
+    .skill dd,.skill dt{font-size:9.6px}
+    .summary{font-size:9.8px}
+    .edu-line{font-size:9.6px}.edu-line b{font-size:11.4px}
   }
   @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
@@ -306,12 +158,7 @@
 
   <section class="sec">
     <div class="sec-head"><h2>个人优势</h2><span class="line"></span><span class="tag">Profile</span></div>
-    <ul>
-      <li><strong>完整交付过一个 0→1 的医疗 AI Agent 平台</strong>，并主导其「Web 多租户 → 合规驱动的桌面本地执行 → 组织管控服务端」三阶段架构演进；Go、Python、TypeScript 三栈均有万行级生产实产。</li>
-      <li><strong>不只是写功能</strong>：自研零依赖 Go 并发压测工具做容量评估，设计带迟滞带的负反馈内存控制器根治执行节点 OOM，主动安全审计并修复越权访问与默认凭据两处高危缺陷。</li>
-      <li><strong>AI 应用工程链路完整</strong>：从 RAG 检索增强、多 Agent 编排与思维链、流式输出与模型路由，到 LoRA 微调与评估体系，再到 API Key 池化、并发控制与用量计量的成本治理层。</li>
-      <li><strong>产品与技术双视角</strong>：两段 AI 产品经理经历（年度大版本发版总负责人、推动两项产品立项），能自己写代码验证产品假设。</li>
-    </ul>
+    <p class="summary">交付过 <strong>0→1 的医疗 AI Agent 平台</strong>并主导其「Web 多租户 → 合规驱动的桌面本地执行」架构转型，Go、Python、TypeScript 三栈均有万行级生产实产。AI 应用工程链路完整：多 Agent 编排、模型路由与 fallback、RAG、LoRA 微调与评估，到 API Key 按人签发与用量计量的成本治理；并以自研 Go 压测工具与负反馈内存控制器解决平台容量与 OOM 问题。</p>
   </section>
 
   <section class="sec">
@@ -324,61 +171,38 @@
           <h3>上海杰诺生物科技有限公司</h3><span class="sep">/</span>
           <span class="what">全栈工程师</span>
         </div>
-        <p class="lede"><strong>量子链 · 医疗 AI Agent 工作台（0→1 自研）</strong> —— 面向临床研究的 Agent 平台，支持 SAE 报告生成、CRF 核查等医疗工作流。参与并主导产品三个阶段的完整演进。</p>
+        <p class="lede"><strong>量子链 · 医疗 AI Agent 工作台（0→1 自研）</strong> —— 面向临床研究的 Agent 平台，支持 SAE 报告生成、CRF 核查等医疗工作流。</p>
 
         <div class="stage">
           <div class="stage-label"><span class="stage-num">阶段 01</span><span class="t">Web 版工作台：Go 控制面 + Agent 网关</span></div>
           <ul>
-            <li>从 0 参与搭建 Go/Gin 控制面（<span class="m">85</span> 个源文件、<span class="m">1.6 万</span>行、<span class="m">105</span> 个接口）与独立 Agent 网关 supervisor：企微扫码与账密双登录、单账号单会话、每工作流独立 Agent 实例、每任务独立工作目录与产物回收。</li>
-            <li>实现工作流市场全链路（发布 → 管理员审批授权 → 成员使用），配套 API Key 池化分配（一人一把、可回收）；工作流自动匹配采用 <strong>L1 关键词 + L2 语义路由</strong>双层策略，并配 human-in-the-loop 人工确认的中断／续跑机制。</li>
-            <li>攻坚大文件与长任务稳定性：分片上传 + 断点续传 + 分片超时自愈、SSH 隧道保活与连接池、产物只回收 <code>output/</code> 以避免中间态污染工作区。</li>
+            <li>从 0 参与搭建 Go/Gin 控制面（<span class="m">85</span> 文件 / <span class="m">1.6 万</span>行 / <span class="m">105</span> 接口）与独立 Agent 网关 supervisor：企微扫码与账密双登录、每工作流独立 Agent 实例、每任务独立工作目录与产物回收，并打通工作流市场「发布 → 审批授权 → 成员使用」全链路。</li>
+            <li><strong>多模型接入与分级路由</strong>：将 deepseek / qwen / zai 统一抽象为 <code>openai-completions + baseUrl</code>，建立「全局默认 → 单技能覆盖 → 部门白名单」三层模型偏好与 fallback 自动降级。</li>
+            <li><strong>API Key 池化与百炼按人动态签发</strong>：将共享企业 Key 重构为一人一把、可回收的池化分配；接入阿里云百炼 ModelStudio OpenAPI 现场签发专属 Key（留存云侧 apiKeyId 对账、离职真实调用 DeleteApiKey 释放配额位），<strong>一把 Key 通吃 qwen / deepseek / glm</strong> —— 解决共享凭据无法定位泄露源、无法按人撤销与计量的根本缺陷。</li>
+            <li><strong>稳定性与容量</strong>：分片上传 + 断点续传 + 超时自愈、SSH 隧道保活与连接池；设计恒温器式内存控制器（以内核 <code>MemAvailable%</code> 与 PSI 为反馈量，systemd <code>MemoryHigh</code> 软限 + 加解限迟滞带）根治执行节点 OOM；自研零依赖 Go 压测工具以 N 个独立账号模拟真实多人并发，定位各层并发拐点。</li>
           </ul>
         </div>
 
         <div class="stage">
-          <div class="stage-label"><span class="stage-num">阶段 02</span><span class="t">合规驱动的架构转型：桌面客户端</span></div>
+          <div class="stage-label"><span class="stage-num">阶段 02</span><span class="t">合规驱动的架构转型：桌面客户端 + 模型本地化</span></div>
           <ul>
-            <li>因医疗数据不得出内网，<strong>主导将 Web 版重构为桌面本地执行架构</strong>：Electron（主／预加载／渲染三层隔离）+ React 19 + Vite，任务在用户本机 WSL2 内完成、数据不出网；安全基线关闭 <code>nodeIntegration</code>、开启 <code>contextIsolation</code> 与 <code>sandbox</code>，系统能力全部经预加载层 <strong>IPC 白名单注册表</strong>暴露。</li>
-            <li>自研 WSL2 一键装机链路（导入 Ubuntu rootfs → 创建 AgentScope 运行时 → 部署后端 → 健康检查），全程免管理员权限。定位并根治四个平台级缺陷：WSL 在最后一个会话结束时回收后台进程（改为主进程持有前台会话 + 指数退避守护）、Windows→<code>wsl.exe</code> 的 argv 传递破坏脚本内容（<strong>改走 stdin 注入</strong>）、uvicorn 仅绑 IPv4 而 Chromium 优先解析 <code>::1</code>、mirrored 网络模式需下发 Hyper-V 防火墙规则 —— <strong>将一类「装完却连不上」的偶发故障收敛为可复现并彻底修复</strong>。</li>
-            <li>实现数据脱敏全链路：任务执行前自动脱敏（Agent 只见脱敏数据），产物回传时按 token 映射还原为原值；跨文件令牌稳定、映射不进工作区不写日志、<strong>fail-closed</strong>。</li>
-            <li>本机重数据处理：DuckDB 对 csv/xlsx 跑只读 SQL，百万行本机 <span class="m">0.28s</span>；大文件分块预览 + 组装内存上限，避免渲染进程 OOM。</li>
+            <li>因医疗数据不得出内网，<strong>主导将 Web 版重构为桌面本地执行架构</strong>：Electron（主／预加载／渲染三层隔离）+ React 19 + Vite，任务在用户本机 WSL2 内完成、数据不出网；关闭 <code>nodeIntegration</code>、开启 <code>contextIsolation</code> 与 <code>sandbox</code>，系统能力经预加载层 IPC 白名单暴露；并实现执行前自动脱敏、回传按 token 还原的 fail-closed 脱敏链路。</li>
+            <li><strong>牵头模型本地化部署方案</strong>：针对临床原始记录与病历 PDF 出境公网 API 的合规风险，依托既有 OpenAI 兼容抽象论证「本地推理服务即第四个 provider」—— vLLM / SGLang / Ollama 仅需新增 provider 条目与内网 baseUrl，不改业务代码；借单技能模型偏好实现<strong>敏感技能走本地、普通对话走云</strong>的分级路由，并禁止敏感技能配置云端 fallback 以防绕过合规。</li>
+            <li>自研 WSL2 一键装机链路（导入 Ubuntu rootfs → 创建 AgentScope 运行时 → 部署后端 → 健康检查），全程免管理员权限；定位并根治四个平台级缺陷 —— WSL 末会话结束回收后台进程、Windows→<code>wsl.exe</code> 的 argv 传参破坏脚本内容（改走 stdin 注入）、uvicorn 仅绑 IPv4 而 Chromium 优先解析 <code>::1</code>、mirrored 网络需下发 Hyper-V 防火墙规则，<strong>将「装完却连不上」的偶发故障收敛为可复现并彻底修复</strong>。</li>
           </ul>
         </div>
 
-        <div class="stage">
-          <div class="stage-label"><span class="stage-num">阶段 03</span><span class="t">组织管控服务端</span></div>
-          <ul>
-            <li>独立设计并实现组织服务端（FastAPI + SQLite，<span class="m">4,200</span> 行 / <span class="m">41</span> 个接口）：邀请码注册、成员与角色、API Key 分发、工作流增量下发、WSL/AgentScope 镜像分发。因服务端面向多客户端并发写入，放弃客户端沿用的 JSON 存储，改用 <strong>SQLite（WAL + <code>BEGIN IMMEDIATE</code>）消除读-改-写丢更新</strong>。</li>
-            <li>将密钥分发从「共享企业 Key」重构为<strong>池化按人分配</strong>：幂等签出、离职回收、下发落审计（用户／设备／密钥三元组）、支持单独撤销 —— 解决共享凭据无法定位泄露源、无法按人撤销的根本缺陷。</li>
-            <li>设计<strong>一机一凭据</strong>的设备认证模型：装机时以注册令牌换取本机独有凭据（服务端仅存 PBKDF2 散列），可撤销单台设备而不影响其余装机；「被撤销设备不得自动重新注册」「已注册设备不得用自身凭据再注册新节点」两条关键约束均有测试守护。</li>
-          </ul>
-        </div>
-
-        <div class="stage">
-          <div class="stage-label"><span class="stage-num">贯穿全程</span><span class="t">稳定性与质量</span></div>
-          <ul>
-            <li>设计<strong>恒温器式内存控制器</strong>解决执行节点 OOM：以内核 <code>MemAvailable%</code> 与 PSI 为反馈量，通过 systemd <code>MemoryHigh</code> 软限逼网关回收而非杀进程；设加限／解限双阈值构成<strong>迟滞带</strong>、动作间强制稳定等待以抑制过冲与震荡，濒临 OOM 时批量紧急加限。上线后消除了执行机因单用户占用过高导致的整机不可用。</li>
-            <li>自研<strong>零依赖 Go 并发压测工具</strong>做容量评估：以 N 个互相独立账号模拟真实多人并发（而非单账号打 N 次）、登录与加压分离避免污染计时、调高 <code>MaxIdleConnsPerHost</code> 防止客户端先于服务端成为瓶颈、按成功请求统计延迟分位数并对错误分类；<span class="m">5</span> 种负载模式用于定位各层并发拐点。</li>
-            <li>建立双端质量保障体系：<span class="m">80</span> 个单元测试 + <span class="m">75</span> 项端到端断言（真实拉起两个进程，覆盖 HTTP 层超时、错误码、multipart 与 Range 语义），守护权限边界、越权拒绝、分片字节一致性、服务端不可达时不得降级绕过组织校验等关键性质。</li>
-            <li><strong>主动开展安全审计并修复两处高危缺陷</strong>：任务接口按 ID 访问缺归属校验（任意成员可读取／删除他人任务，含指令原文）；服务每次启动播种 <code>admin/admin</code> 默认管理员，并导致首个真实用户永远无法注册。均已修复并补回归测试。</li>
-          </ul>
-        </div>
-
-        <p class="stack"><b>技术栈</b>　Go / Gin ｜ Python / FastAPI / SQLite ｜ TypeScript / React 19 / Vite / Electron ｜ WSL2 / systemd / Nginx ｜ AgentScope / pytest / Playwright</p>
+        <p class="stack"><b>技术栈</b>　Go / Gin ｜ Python / FastAPI / SQLite ｜ TypeScript / React 19 / Vite / Electron ｜ WSL2 / systemd / Nginx ｜ AgentScope / pytest</p>
       </div>
     </article>
 
     <article class="entry">
       <div class="when"><b>2025.11</b>2026.04</div>
       <div class="entry-body">
-        <div class="role">
-          <h3>足下科技有限公司</h3><span class="sep">/</span>
-          <span class="what">AI 产品经理</span>
-        </div>
+        <div class="role"><h3>足下科技有限公司</h3><span class="sep">/</span><span class="what">AI 产品经理</span></div>
         <ul>
-          <li><strong>AI 产品设计</strong>：主导 AIknowledge 产品优化，引入流式输出、上下文管理优化、模型路由、多 Agent 规划及思维链技术，将产品从 AI 对话工具升级为真正可用的公司内部材料编辑助手；另完成企业知识库的产品开发规划，支撑商业化拓展。</li>
-          <li><strong>行业与政策调研</strong>：深入调研汽车行业竞品及国标政策，挖掘市场机会，提出并成功推进 ADR（事件触发系统）与 OTA（远程升级系统）两项产品立项开发，助力公司提前完成合规布局。</li>
-          <li><strong>发版管理</strong>：担任年度大版本 V1.17.1 发版总负责人，统筹需求冻结、测试、Bug 修复到上线全流程，组织跨部门评审推进问题收敛；编写产品手册并完成客户培训，上线后 <span class="m">72</span> 小时协同技术团队完成首个补丁包快速修复。</li>
+          <li>主导 AIknowledge 产品优化，引入流式输出、上下文管理优化、模型路由、多 Agent 规划及思维链技术，将产品从 AI 对话工具升级为可用的公司内部材料编辑助手，并完成企业知识库产品规划支撑商业化拓展。</li>
+          <li>调研汽车行业竞品与国标政策，推动 ADR、OTA 两项产品立项；任年度大版本 V1.17.1 发版总负责人，统筹需求冻结至上线全流程，上线后 <span class="m">72</span> 小时内完成首个补丁包修复。</li>
         </ul>
       </div>
     </article>
@@ -386,14 +210,9 @@
     <article class="entry">
       <div class="when"><b>2025.03</b>2025.10</div>
       <div class="entry-body">
-        <div class="role">
-          <h3>南京国睿科技睿行数智</h3><span class="sep">/</span>
-          <span class="what">产品经理</span>
-        </div>
+        <div class="role"><h3>南京国睿科技睿行数智</h3><span class="sep">/</span><span class="what">产品经理</span></div>
         <ul>
-          <li>负责对接客户团队、需求分析、PRD 撰写及原型设计，组织需求评审明确方案并推动落地。</li>
-          <li>参与<strong>应急处置 AI Agent</strong> 方案设计，完成部分原型输出并组织评审测试（业务测试集准确率超过 <span class="m">80%</span>），推动方案在 V2 版本中实际投入使用。</li>
-          <li>负责乘务管理系统核心功能模块的业务流程优化与交互原型输出，协助完成系统终验测试与汇报，保障产品按时上线并持续跟踪反馈推动迭代。</li>
+          <li>负责需求分析、PRD 撰写与原型设计并组织评审推动落地；参与<strong>应急处置 AI Agent</strong> 方案设计与原型输出，组织评审测试（业务测试集准确率超 <span class="m">80%</span>）并推动方案在 V2 版本投入使用；另负责乘务管理系统核心模块的流程优化与交互原型，保障系统终验与按时上线。</li>
         </ul>
       </div>
     </article>
@@ -405,17 +224,11 @@
     <article class="entry">
       <div class="when"><b>2026.03</b>2026.06</div>
       <div class="entry-body">
-        <div class="role">
-          <h3>kapibala 社区 · AI 学习型社区平台</h3><span class="sep">/</span>
-          <span class="what">负责人 · 全栈</span>
-        </div>
-        <p class="lede">面向 AI 研究者与开发者的知识社区，融合技术社区属性与 AI 资源生态，按商业级前后端分离与 <span class="m">1000+</span> 并发在线目标设计。前端 Vue 3 + TS（<span class="m">5.0 万</span>行 / <span class="m">20</span> 个视图），后端 Fastify + Prisma + PostgreSQL + Redis（<span class="m">2.8 万</span>行 / <span class="m">70</span> 个数据模型 / <span class="m">339</span> 个 API）。</p>
+        <div class="role"><h3>kapibala 社区 · AI 学习型社区平台</h3><span class="sep">/</span><span class="what">负责人 · 全栈</span></div>
+        <p class="lede">面向 AI 研究者与开发者的知识社区，按商业级前后端分离与 <span class="m">1000+</span> 并发在线目标设计。Vue 3 + TS 前端 <span class="m">5.0 万</span>行 / <span class="m">20</span> 视图，Fastify + Prisma + PostgreSQL + Redis 后端 <span class="m">2.8 万</span>行 / <span class="m">70</span> 数据模型 / <span class="m">339</span> API。</p>
         <ul>
-          <li><strong>WebGPU 端侧推理</strong>：笔记编辑器用 compute shader 做 on-device 幽灵文本（Ghost Text）预测，JS n-gram 作为降级路径 —— 以零往返延迟、零 token 成本、数据不出端同时满足体验与隐私要求。</li>
-          <li><strong>面向 1000 并发的三阶段治理</strong>：① 将 Swagger 暴露、消费者启动方式、上传策略、Cookie 安全项从「代码默认」提升为环境显式控制，消除环境行为漂移；② 引入 PgBouncer transaction mode，确立「应用查询走池化通道、数据库管理流量走直连」双通道原则（<code>MAX_CLIENT_CONN=1200</code>）；③ 将热点路径的缓存键与判定规则收口为统一模块，全局搜索做查询归一化 + 短查询拦截 + Redis <span class="m">45s</span> 缓存，缓解六类数据源 fan-out 放大。</li>
-          <li><strong>横向扩展与实时</strong>：API 可多副本扩容，共享 Redis 承担分布式限流、会话与 pub/sub；WebSocket 跨节点经统一频道广播（本地投递 + 跨进程中继）。</li>
-          <li><strong>异步化与 AI 治理</strong>：以 BullMQ 将笔记副作用（审计、通知、搜索投影）与视频转码移出主路径；实现 AI 密钥池、并发控制、限流与用量计量四层，覆盖调用成本治理。</li>
-          <li><strong>安全</strong>：Argon2 哈希、JWT access/refresh 轮换 + HttpOnly cookie、helmet、CORS 白名单、Zod 全量入参校验、Prisma 参数化查询。</li>
+          <li><strong>WebGPU 端侧推理</strong>：笔记编辑器用 compute shader 做 on-device 幽灵文本预测，JS n-gram 作降级路径，以零往返延迟、零 token 成本、数据不出端同时满足体验与隐私。</li>
+          <li><strong>高并发治理与异步化</strong>：引入 PgBouncer transaction mode 确立「应用查询走池化、管理流量走直连」双通道；热点路径缓存键统一收口，搜索做查询归一化与 Redis 短 TTL 缓存；以 BullMQ 将笔记审计、通知、搜索投影与视频转码移出主路径；并实现 AI 密钥池、并发控制、限流与用量计量四层成本治理。</li>
         </ul>
       </div>
     </article>
@@ -424,16 +237,12 @@
       <div class="when"><b>2025.09</b>2025.11</div>
       <div class="entry-body">
         <div class="role">
-          <h3>卢医司元 · AI 中医健康监测助手</h3><span class="sep">/</span>
-          <span class="what">负责人</span>
+          <h3>卢医司元 · AI 中医健康监测助手</h3><span class="sep">/</span><span class="what">负责人</span>
           <span class="meta">LIC·2025 语言与智能技术竞赛 · 智慧医疗赛道</span>
         </div>
-        <p class="lede">针对现有健康管理应用缺乏中医辨证思维的问题，结合中医「望闻问切」构建提供个性化体质诊断、膳食推荐与健康管理的 AI 助手。</p>
         <ul>
-          <li><strong>需求定义与多模态设计</strong>：拆解「望闻问切」场景，将舌象（舌色／苔质／裂纹／齿痕）、面象（黑眼圈／浮肿／面色）与语音问诊等多模态体征交叉验证后统一生成诊断依据。</li>
-          <li><strong>记忆与交互架构</strong>：设计「长期体质画像 + 短期动态症状库」双层记忆引擎，突破大模型上下文窗口限制，实现跨会话的连续化、个性化健康管理。</li>
-          <li><strong>知识驱动的主动对话</strong>：主导构建 Neo4j 中医知识图谱（覆盖体质、症状、证候、方剂、药性及禁忌关系），并在其上设计动态槽位填充反问流程，用户提供超过 <span class="m">3</span> 条症状信息时反问准确率超 <span class="m">90%</span>。</li>
-          <li><strong>数据流水线与微调</strong>：设计「转写抽帧 → Prompt 式实体抽取 → QA 生成 → Q-A-KG 结构化 → 向量化入 FAISS」五步数据流水线；制定 QLoRA 高效微调方案，微调模型在自建医学问题集上较原模型（<span class="m">50%</span>）提升约 <span class="m">31%</span>；自建 <span class="m">100</span> 题应用测试集推动 Agent 回答正确率提升 <span class="m">78%</span> 以上。</li>
+          <li>拆解中医「望闻问切」场景，将舌象、面象与语音问诊多模态体征交叉验证生成诊断依据；设计「长期体质画像 + 短期动态症状库」双层记忆引擎，突破上下文窗口限制实现跨会话连续化管理。</li>
+          <li>主导构建 Neo4j 中医知识图谱（体质、症状、证候、方剂、药性及禁忌）并设计动态槽位填充反问流程，用户提供超 <span class="m">3</span> 条症状时反问准确率超 <span class="m">90%</span>；制定 QLoRA 微调方案，微调模型在自建医学问题集上较原模型（<span class="m">50%</span>）提升约 <span class="m">31%</span>，<span class="m">100</span> 题测试集推动 Agent 回答正确率提升 <span class="m">78%</span> 以上。</li>
         </ul>
       </div>
     </article>
@@ -441,15 +250,10 @@
     <article class="entry">
       <div class="when"><b>2026.01</b>2026.05</div>
       <div class="entry-body">
-        <div class="role">
-          <h3>医疗实体抽取与断言训练框架</h3><span class="sep">/</span>
-          <span class="what">负责人</span>
-        </div>
-        <p class="lede">零样本医疗 NER + 四类断言分类的科研级流水线，<span class="m">18</span> 个模块 / <span class="m">7,100</span> 行 Python / <span class="m">9</span> 阶段，内置 <span class="m">6 万</span>节点、<span class="m">35 万</span>三元组的医学知识图谱。</p>
+        <div class="role"><h3>医疗实体抽取与断言训练框架</h3><span class="sep">/</span><span class="what">负责人</span></div>
         <ul>
-          <li><strong>多阶段流水线实体抽取</strong>：构建「预学习 → LLM 抽取（集成提示与反思机制）→ 词汇与知识图谱扩展 → 规则过滤与归一化」四步处理流程，提升实体识别召回率与准确率；CMeEE-V2 上 Micro F1 <span class="m">0.631</span>，IMCS-V2 归一化后 Micro F1 <span class="m">0.711</span>。</li>
-          <li><strong>断言分类模型微调</strong>：基于 MacBERT 微调断言分类器，以 FocalLoss(γ=1.6) + FGM 对抗训练(ε=0.11) + 类权重 + 实体标记解决样本不平衡等问题，CMeEE 测试集 Macro F1 <span class="m">0.878</span>，IMCS 测试集 Macro F1 <span class="m">0.89</span>。</li>
-          <li><strong>工程可靠性</strong>：test split 全程不参与训练、分类器按文档分组划分内部验证集以严格防泄露；全部 <span class="m">12</span> 个阶段支持断点续传，原子写入（<code>.tmp</code> → <code>rename</code>）保证进程被强杀也不损坏中间产物。</li>
+          <li>零样本医疗 NER + 四类断言分类流水线（<span class="m">18</span> 模块 / <span class="m">7,100</span> 行 / <span class="m">9</span> 阶段，内置 <span class="m">6 万</span>节点、<span class="m">35 万</span>三元组知识图谱）：以「预学习 → LLM 抽取（提示 + 反思）→ 知识图谱扩展 → 规则过滤归一化」四步流程取得 CMeEE-V2 Micro F1 <span class="m">0.631</span>、IMCS-V2 归一化后 <span class="m">0.711</span>。</li>
+          <li>基于 MacBERT 微调断言分类器，以 FocalLoss + FGM 对抗训练 + 类权重 + 实体标记解决样本不平衡，CMeEE / IMCS 测试集 Macro F1 <span class="m">0.878</span> / <span class="m">0.89</span>；test split 全程不参与训练并按文档分组划分验证集，严格防泄露。</li>
         </ul>
       </div>
     </article>
@@ -457,13 +261,9 @@
     <article class="entry">
       <div class="when"><b>2026.07</b>2026.08</div>
       <div class="entry-body">
-        <div class="role">
-          <h3>to3D · 图文联合 3D 生成</h3><span class="sep">/</span>
-          <span class="what">个人项目</span>
-        </div>
+        <div class="role"><h3>to3D · 图文联合 3D 生成</h3><span class="sep">/</span><span class="what">个人项目</span></div>
         <ul>
-          <li>基于混元 3D 的图文<strong>联合</strong>生成系统：多视图图像 tokens 与文字 tokens 拼接为同一条件序列、经 CFG 双模态引导单次生成一份模型，再以器型／花纹／底部／高度／宽度／材质<strong>六维一致性自检</strong>（几何维度直接在网格上做 Chamfer/IoU、包围盒比例与对称性测量）驱动有界迭代的定向修正闭环。</li>
-          <li>以三套同接口适配器（mock ／自建 GPU ／云 API）解耦模型后端，无 GPU 环境亦可全链路运行与测试；<span class="m">35</span> 项测试 + GitHub Actions CI。</li>
+          <li>基于混元 3D 的图文联合生成：图像与文字 tokens 拼接为同一条件序列单次生成模型，再以六维一致性自检（几何维度在网格上真实测量）驱动有界迭代修正；三套同接口适配器解耦模型后端，无 GPU 亦可全链路测试。</li>
         </ul>
       </div>
     </article>
@@ -472,33 +272,19 @@
   <section class="sec">
     <div class="sec-head"><h2>专业技能</h2><span class="line"></span><span class="tag">Skills</span></div>
     <dl class="skills">
-      <div class="skill"><dt>后端</dt><dd>Go（Gin）、Python（FastAPI）、Node.js（Fastify）；三种后端栈均有万行级生产实产，累计交付 <span class="m">480+</span> HTTP 接口</dd></div>
-      <div class="skill"><dt>前端</dt><dd>React 19 / Vue 3 / TypeScript / Vite / Pinia；Electron 桌面端工程化（三层隔离与 IPC 白名单注册表）</dd></div>
-      <div class="skill"><dt>数据存储</dt><dd>PostgreSQL（Prisma、PgBouncer 池化治理）、SQLite（WAL 与 <code>BEGIN IMMEDIATE</code> 并发写入）、Redis（缓存／分布式限流／pub-sub）、Neo4j、FAISS、DuckDB</dd></div>
-      <div class="skill"><dt>AI 工程</dt><dd>RAG 检索增强、多 Agent 编排与规划、思维链、流式输出、模型路由、上下文管理；LoRA/QLoRA 微调与评估体系；AgentScope、LangChain；AI 密钥池化／并发控制／用量计量</dd></div>
-      <div class="skill"><dt>系统与运维</dt><dd>Linux 系统级排障（<code>/proc</code> 内存指标与 PSI、双栈解析、防火墙规则）、systemd cgroup 内存治理、WSL2、Docker Compose、Nginx、BullMQ</dd></div>
-      <div class="skill"><dt>质量与安全</dt><dd>pytest / vitest / Playwright；越权与路径穿越防护、凭据模型设计（PBKDF2 / Argon2 / JWT 轮换）、fail-closed 数据脱敏；自研并发压测与容量评估</dd></div>
-      <div class="skill"><dt>产品</dt><dd>Axure 高保真原型、PRD 撰写与需求评审、发版管理、行业与政策调研</dd></div>
-      <div class="skill"><dt>AI 辅助开发</dt><dd>以架构设计与验收标准驱动 Claude Code 等工具产出实现，由本人承担问题定位、方案否决与安全审查</dd></div>
+      <div class="skill"><dt>后端</dt><dd>Go（Gin）、Python（FastAPI）、Node.js（Fastify）；三栈均有万行级生产实产，累计交付 <span class="m">480+</span> HTTP 接口</dd></div>
+      <div class="skill"><dt>前端</dt><dd>React 19 / Vue 3 / TypeScript / Vite / Pinia；Electron 桌面端工程化（三层隔离与 IPC 白名单）</dd></div>
+      <div class="skill"><dt>数据与 AI</dt><dd>PostgreSQL（Prisma / PgBouncer）、SQLite、Redis、Neo4j、FAISS、DuckDB；多 Agent 编排、RAG、模型路由与 fallback、LoRA/QLoRA 微调与评估、AgentScope / LangChain</dd></div>
+      <div class="skill"><dt>系统与质量</dt><dd>Linux 系统级排障（<code>/proc</code> 内存指标与 PSI、双栈解析、防火墙）、systemd cgroup 内存治理、WSL2、Docker、Nginx、BullMQ；pytest / vitest、并发压测与容量评估、越权防护与 fail-closed 脱敏；Axure 原型与 PRD 撰写、发版管理</dd></div>
     </dl>
   </section>
 
   <section class="sec">
     <div class="sec-head"><h2>教育与荣誉</h2><span class="line"></span><span class="tag">Education</span></div>
-    <div class="edu">
-      <article class="entry">
-        <div class="when"><b>2022.09</b>2026.07</div>
-        <div class="entry-body">
-          <div class="role"><h3>安徽工业大学</h3><span class="sep">/</span><span class="what">软件工程 · 本科</span></div>
-          <p class="lede" style="margin-bottom:0">相关课程：数据结构、软件架构设计、UML 实例分析、Java 程序设计、数据库原理、计算机系统基础</p>
-        </div>
-      </article>
-      <ul class="honors">
-        <li>LIC·2025 语言与智能技术竞赛 · 智慧医疗赛道（卢医司元项目负责人）</li>
-        <li>全国大学生数学建模竞赛（2024、2025）、美国大学生数学建模竞赛 MCM/ICM（2026）、2025「揭榜挂帅」无人集群专项赛</li>
-        <li>校园市场经理：从 0 组建 <span class="m">10</span> 人团队并负责招聘、培训与考核，半年实现 <span class="m">50 万+</span> 销售额、完成超百名客户转化；任班长期间获「优秀班干部」称号</li>
-      </ul>
-    </div>
+    <p class="edu-line"><b>安徽工业大学</b>　软件工程（本科）　<span class="yr">2022.09 – 2026.07</span>　—— 数据结构、软件架构设计、UML 实例分析、Java 程序设计、数据库原理、计算机系统基础</p>
+    <ul>
+      <li>LIC·2025 语言与智能技术竞赛 · 智慧医疗赛道（项目负责人）；全国大学生数学建模竞赛（2024、2025）、美国大学生数学建模竞赛 MCM/ICM（2026）、2025「揭榜挂帅」无人集群专项赛；曾任校园市场经理，从 0 组建 <span class="m">10</span> 人团队半年实现 <span class="m">50 万+</span> 销售额，任班长期间获「优秀班干部」称号</li>
+    </ul>
   </section>
 
 </div>
